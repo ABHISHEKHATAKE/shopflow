@@ -1,0 +1,55 @@
+:root {
+  --bg: #f4f6f8; --surface: #ffffff; --ink: #16202b; --muted: #5d6b7a; --line: #dbe1e7;
+  --accent: #0b6e69; --accent-ink: #ffffff; --warn: #a15c00; --danger: #b3261e;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink); background: var(--bg);
+}
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.5; }
+h1 { font-size: 1.6rem; margin: 0 0 1rem; }
+h2 { font-size: 1.15rem; margin: 1.5rem 0 .75rem; }
+h3 { margin: 0 0 .25rem; font-size: 1.05rem; }
+main { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+a { color: var(--accent); }
+.bar { display: flex; align-items: center; gap: 1.5rem; padding: .75rem 1.25rem; background: var(--surface); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.brand { font-weight: 700; font-size: 1.15rem; text-decoration: none; color: var(--ink); }
+.bar nav { display: flex; gap: 1rem; flex: 1; }
+.bar nav a { text-decoration: none; color: var(--muted); padding: .25rem 0; }
+.bar nav a.active { color: var(--ink); border-bottom: 2px solid var(--accent); }
+.who { display: flex; gap: .75rem; align-items: center; color: var(--muted); }
+.pill { background: var(--accent); color: var(--accent-ink); border-radius: 999px; font-size: .75rem; padding: 0 .45rem; margin-left: .35rem; }
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.toolbar h1 { margin: 0; }
+input { font: inherit; padding: .5rem .65rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); width: 100%; }
+.toolbar input { max-width: 280px; }
+input:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button { font: inherit; cursor: pointer; border: 0; border-radius: 6px; padding: .55rem 1rem; background: var(--accent); color: var(--accent-ink); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+button.link { background: none; color: var(--accent); padding: 0; text-decoration: underline; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.card, .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+.card { display: flex; flex-direction: column; gap: .5rem; margin: 0; }
+.card p { margin: 0; flex: 1; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin: .4rem 0; }
+.line { display: grid; grid-template-columns: 1fr auto 110px; gap: 1rem; align-items: center; padding: .75rem 0; border-bottom: 1px solid var(--line); }
+.line.total { grid-template-columns: 1fr auto; border: 0; font-size: 1.15rem; }
+.line.total strong { text-align: right; }
+.line > strong { text-align: right; }
+.qty { display: flex; align-items: center; gap: .6rem; }
+.qty button { padding: .2rem .65rem; }
+.formrow { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: .75rem; }
+label { display: block; margin-bottom: .75rem; font-size: .9rem; color: var(--muted); }
+label input { margin-top: .25rem; color: var(--ink); }
+.narrow { max-width: 380px; margin: 2rem auto; }
+.narrow button[type=submit] { width: 100%; margin-bottom: .75rem; }
+.pager { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+.muted { color: var(--muted); } .small { font-size: .85rem; }
+.warn { color: var(--warn); font-weight: 600; }
+.error { color: var(--danger); }
+.status { font-size: .85rem; padding: .1rem .6rem; border-radius: 999px; background: #e8edf2; text-transform: capitalize; }
+.status.PAID, .status.DELIVERED { background: #d7efe8; color: #0b5a45; }
+.status.SHIPPED { background: #dde9fa; color: #1a4a8a; }
+.status.CANCELLED, .status.EXPIRED { background: #f6dedb; color: var(--danger); }
+.status.PENDING_PAYMENT { background: #f8ecd0; color: var(--warn); }
+@media (max-width: 640px) { .line { grid-template-columns: 1fr auto; } .formrow { grid-template-columns: 1fr; } }
